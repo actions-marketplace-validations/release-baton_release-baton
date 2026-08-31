@@ -1,4 +1,4 @@
-name: Release Baton
+name: Release Mate
 description: Run release-please with a short-lived GitHub App installation token instead of a personal access token.
 author: sgerrand
 branding:
@@ -7,10 +7,10 @@ branding:
 
 inputs:
   client-id:
-    description: GitHub App Client ID for Release Baton (visible on the app's settings page).
+    description: GitHub App Client ID for Release Mate (visible on the app's settings page).
     required: true
   app-private-key:
-    description: PEM-encoded private key for the Release Baton GitHub App.
+    description: PEM-encoded private key for the Release Mate GitHub App.
     required: true
   config-file:
     description: Path to the release-please configuration file.
@@ -67,7 +67,7 @@ runs:
   steps:
     - name: Mint installation token
       id: token
-      uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v3.1.1
+      uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
       with:
         client-id: ${{ inputs.client-id }}
         private-key: ${{ inputs.app-private-key }}
